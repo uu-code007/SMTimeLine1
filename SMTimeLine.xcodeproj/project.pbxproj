@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E3CF25F71FB18EDD00266F14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF25F61FB18EDD00266F14 /* AppDelegate.m */; };
+		E3CF25FA1FB18EDD00266F14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF25F91FB18EDD00266F14 /* ViewController.m */; };
+		E3CF25FD1FB18EDD00266F14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CF25FB1FB18EDD00266F14 /* Main.storyboard */; };
+		E3CF25FF1FB18EDD00266F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3CF25FE1FB18EDD00266F14 /* Assets.xcassets */; };
+		E3CF26021FB18EDD00266F14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3CF26001FB18EDD00266F14 /* LaunchScreen.storyboard */; };
+		E3CF26051FB18EDD00266F14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26041FB18EDD00266F14 /* main.m */; };
+		E3CF261A1FB1943F00266F14 /* NSDate+SMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF260D1FB18F0700266F14 /* NSDate+SMExtension.m */; };
+		E3CF261B1FB1944100266F14 /* SMAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF260F1FB18F0700266F14 /* SMAnimationView.m */; };
+		E3CF261C1FB1944300266F14 /* SMRect.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26111FB18F0700266F14 /* SMRect.m */; };
+		E3CF261D1FB1944600266F14 /* SMRectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26131FB18F0700266F14 /* SMRectTool.m */; };
+		E3CF261E1FB1944900266F14 /* SMTimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26151FB18F0700266F14 /* SMTimeLine.m */; };
+		E3CF261F1FB1944C00266F14 /* SMTimeLineConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26171FB18F0700266F14 /* SMTimeLineConst.m */; };
+		E3CF26201FB1945200266F14 /* SMTimeLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26191FB18F0700266F14 /* SMTimeLineView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E3CF25F21FB18EDD00266F14 /* SMTimeLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMTimeLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3CF25F51FB18EDD00266F14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E3CF25F61FB18EDD00266F14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E3CF25F81FB18EDD00266F14 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E3CF25F91FB18EDD00266F14 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E3CF25FC1FB18EDD00266F14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3CF25FE1FB18EDD00266F14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3CF26011FB18EDD00266F14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3CF26031FB18EDD00266F14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3CF26041FB18EDD00266F14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3CF260C1FB18F0700266F14 /* NSDate+SMExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+SMExtension.h"; sourceTree = "<group>"; };
+		E3CF260D1FB18F0700266F14 /* NSDate+SMExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SMExtension.m"; sourceTree = "<group>"; };
+		E3CF260E1FB18F0700266F14 /* SMAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMAnimationView.h; sourceTree = "<group>"; };
+		E3CF260F1FB18F0700266F14 /* SMAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAnimationView.m; sourceTree = "<group>"; };
+		E3CF26101FB18F0700266F14 /* SMRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRect.h; sourceTree = "<group>"; };
+		E3CF26111FB18F0700266F14 /* SMRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRect.m; sourceTree = "<group>"; };
+		E3CF26121FB18F0700266F14 /* SMRectTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRectTool.h; sourceTree = "<group>"; };
+		E3CF26131FB18F0700266F14 /* SMRectTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRectTool.m; sourceTree = "<group>"; };
+		E3CF26141FB18F0700266F14 /* SMTimeLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMTimeLine.h; sourceTree = "<group>"; };
+		E3CF26151FB18F0700266F14 /* SMTimeLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMTimeLine.m; sourceTree = "<group>"; };
+		E3CF26161FB18F0700266F14 /* SMTimeLineConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMTimeLineConst.h; sourceTree = "<group>"; };
+		E3CF26171FB18F0700266F14 /* SMTimeLineConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMTimeLineConst.m; sourceTree = "<group>"; };
+		E3CF26181FB18F0700266F14 /* SMTimeLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMTimeLineView.h; sourceTree = "<group>"; };
+		E3CF26191FB18F0700266F14 /* SMTimeLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMTimeLineView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3CF25EF1FB18EDD00266F14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3CF25E91FB18EDC00266F14 = {
+			isa = PBXGroup;
+			children = (
+				E3CF25F41FB18EDD00266F14 /* SMTimeLine */,
+				E3CF25F31FB18EDD00266F14 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E3CF25F31FB18EDD00266F14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3CF25F21FB18EDD00266F14 /* SMTimeLine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3CF25F41FB18EDD00266F14 /* SMTimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				E3CF260B1FB18F0700266F14 /* Classes */,
+				E3CF25F51FB18EDD00266F14 /* AppDelegate.h */,
+				E3CF25F61FB18EDD00266F14 /* AppDelegate.m */,
+				E3CF25F81FB18EDD00266F14 /* ViewController.h */,
+				E3CF25F91FB18EDD00266F14 /* ViewController.m */,
+				E3CF25FB1FB18EDD00266F14 /* Main.storyboard */,
+				E3CF25FE1FB18EDD00266F14 /* Assets.xcassets */,
+				E3CF26001FB18EDD00266F14 /* LaunchScreen.storyboard */,
+				E3CF26031FB18EDD00266F14 /* Info.plist */,
+				E3CF26041FB18EDD00266F14 /* main.m */,
+			);
+			path = SMTimeLine;
+			sourceTree = "<group>";
+		};
+		E3CF260B1FB18F0700266F14 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E3CF26181FB18F0700266F14 /* SMTimeLineView.h */,
+				E3CF26191FB18F0700266F14 /* SMTimeLineView.m */,
+				E3CF26141FB18F0700266F14 /* SMTimeLine.h */,
+				E3CF26151FB18F0700266F14 /* SMTimeLine.m */,
+				E3CF26101FB18F0700266F14 /* SMRect.h */,
+				E3CF26111FB18F0700266F14 /* SMRect.m */,
+				E3CF260C1FB18F0700266F14 /* NSDate+SMExtension.h */,
+				E3CF260D1FB18F0700266F14 /* NSDate+SMExtension.m */,
+				E3CF260E1FB18F0700266F14 /* SMAnimationView.h */,
+				E3CF260F1FB18F0700266F14 /* SMAnimationView.m */,
+				E3CF26121FB18F0700266F14 /* SMRectTool.h */,
+				E3CF26131FB18F0700266F14 /* SMRectTool.m */,
+				E3CF26161FB18F0700266F14 /* SMTimeLineConst.h */,
+				E3CF26171FB18F0700266F14 /* SMTimeLineConst.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3CF25F11FB18EDD00266F14 /* SMTimeLine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3CF26081FB18EDD00266F14 /* Build configuration list for PBXNativeTarget "SMTimeLine" */;
+			buildPhases = (
+				E3CF25EE1FB18EDD00266F14 /* Sources */,
+				E3CF25EF1FB18EDD00266F14 /* Frameworks */,
+				E3CF25F01FB18EDD00266F14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMTimeLine;
+			productName = SMTimeLine;
+			productReference = E3CF25F21FB18EDD00266F14 /* SMTimeLine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3CF25EA1FB18EDD00266F14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "孙慕";
+				TargetAttributes = {
+					E3CF25F11FB18EDD00266F14 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E3CF25ED1FB18EDD00266F14 /* Build configuration list for PBXProject "SMTimeLine" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3CF25E91FB18EDC00266F14;
+			productRefGroup = E3CF25F31FB18EDD00266F14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3CF25F11FB18EDD00266F14 /* SMTimeLine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3CF25F01FB18EDD00266F14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3CF26021FB18EDD00266F14 /* LaunchScreen.storyboard in Resources */,
+				E3CF25FF1FB18EDD00266F14 /* Assets.xcassets in Resources */,
+				E3CF25FD1FB18EDD00266F14 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3CF25EE1FB18EDD00266F14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3CF261B1FB1944100266F14 /* SMAnimationView.m in Sources */,
+				E3CF261D1FB1944600266F14 /* SMRectTool.m in Sources */,
+				E3CF25FA1FB18EDD00266F14 /* ViewController.m in Sources */,
+				E3CF26051FB18EDD00266F14 /* main.m in Sources */,
+				E3CF261C1FB1944300266F14 /* SMRect.m in Sources */,
+				E3CF26201FB1945200266F14 /* SMTimeLineView.m in Sources */,
+				E3CF261A1FB1943F00266F14 /* NSDate+SMExtension.m in Sources */,
+				E3CF261F1FB1944C00266F14 /* SMTimeLineConst.m in Sources */,
+				E3CF261E1FB1944900266F14 /* SMTimeLine.m in Sources */,
+				E3CF25F71FB18EDD00266F14 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E3CF25FB1FB18EDD00266F14 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3CF25FC1FB18EDD00266F14 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3CF26001FB18EDD00266F14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3CF26011FB18EDD00266F14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3CF26061FB18EDD00266F14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E3CF26071FB18EDD00266F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3CF26091FB18EDD00266F14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XYFPU28B7N;
+				INFOPLIST_FILE = SMTimeLine/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunmu.SMTimeLine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3CF260A1FB18EDD00266F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XYFPU28B7N;
+				INFOPLIST_FILE = SMTimeLine/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = sunmu.SMTimeLine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3CF25ED1FB18EDD00266F14 /* Build configuration list for PBXProject "SMTimeLine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3CF26061FB18EDD00266F14 /* Debug */,
+				E3CF26071FB18EDD00266F14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3CF26081FB18EDD00266F14 /* Build configuration list for PBXNativeTarget "SMTimeLine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3CF26091FB18EDD00266F14 /* Debug */,
+				E3CF260A1FB18EDD00266F14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3CF25EA1FB18EDD00266F14 /* Project object */;
+}

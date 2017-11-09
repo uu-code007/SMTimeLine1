@@ -28,9 +28,7 @@
      // components.nanosecond = 0 not available in iOS
      NSTimeInterval ts = (double)(int)[[calendar dateFromComponents:components] timeIntervalSince1970];
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:ts];
-//    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-//    NSInteger interval = [zone secondsFromGMTForDate: date];
-//    NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
+;
     return date;
  }
 

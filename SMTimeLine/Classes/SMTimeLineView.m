@@ -68,8 +68,6 @@ static const NSInteger kTimeLineNumberOfDays = 7;
 -(NSDateFormatter *)dateFormat{
     if (!_dateFormat) {
         _dateFormat = [[NSDateFormatter alloc] init];
-        //        NSTimeZone *timeZone = [NSTimeZone localTimeZone];
-        //        [_dateFormat setTimeZone:timeZone];
         [_dateFormat setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
         
     }
@@ -189,7 +187,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
     self.timeLabel.layer.cornerRadius = 15;
     float x = [self timeLineXAboutpresentTime:[NSDate date]];
     self.maxContentOffsetX = self.CellWidth * kTimeLineNumberOfDays + x - kWinW/2;
-    self.timeLabel.text = [self setLabelText:self.timeLineCollction.contentOffset.x];
+    self.timeLabel.text = [self setLabelTextWithOffset:self.timeLineCollction.contentOffset.x];
     [self.timeLabel setTextAlignment:NSTextAlignmentCenter];
     
     [self addSubview:self.timeLabel];
@@ -273,7 +271,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
     if (self.timeLineCollction == scrollView) {
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(timeLinePresentTime:)]) {
-            [self.delegate timeLinePresentTime:[self datewithOffSet:scrollView.contentOffset.x]];
+            [self.delegate timeLinePresentTime:[self dateWithOffSet:scrollView.contentOffset.x]];
         }
         
         
@@ -292,7 +290,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
         
         if(scrollView.contentOffset.x < self.maxContentOffsetX || (scrollView.contentOffset.x > (x - kWinW/2))){
             //在时间轴表示时间范围内，时间label才会走
-            self.timeLabel.text = [self setLabelText:scrollView.contentOffset.x];
+            self.timeLabel.text = [self setLabelTextWithOffset:scrollView.contentOffset.x];
             //回调出当前时间
             //     [self.delegate SMTimeLinePresentTime:[self datewithOffSet:scrollView.contentOffset.x]];
             
@@ -380,24 +378,26 @@ static const NSInteger kTimeLineNumberOfDays = 7;
     NSDate *date=[NSDate date];
     float x = [self timeLineXAboutpresentTime:date];
     self.maxContentOffsetX = self.CellWidth * kTimeLineNumberOfDays + x - kWinW/2;
-    self.timeLabel.text = [self setLabelText:self.timeLineCollction.contentOffset.x];
+    self.timeLabel.text = [self setLabelTextWithOffset:self.timeLineCollction.contentOffset.x];
     
 }
 
 
 #pragma mark - 某个偏移对应的时间
--(NSString *)setLabelText:(float)setX{
-    NSTimeInterval cha = ((self.maxContentOffsetX - setX) / self.unitLength )* self.unitTime;
-    NSDate *date = [NSDate dateWithTimeInterval:-cha sinceDate:[NSDate date]];
-    NSString *timestr = [self.dateFormat stringFromDate: date];
+-(NSString *)setLabelTextWithOffset:(float)setX{
+    //与最后时间的差
+    int cha = (self.CellWidth * (kTimeLineNumberOfDays + 1) - setX - kWinW/2)/self.unitLength * self.unitTime;
+    NSDate *date = [NSDate dateWithTimeInterval:-cha sinceDate:[[NSDate date] getEndDate]];
+    NSString *timestr = [self.dateFormat stringFromDate:date];
     return timestr;
 }
 
 
--(NSDate *)datewithOffSet:(float)setX{
-    NSTimeInterval cha = ((self.maxContentOffsetX - setX) / self.unitLength )* self.unitTime;
-    NSDate *date = [NSDate dateWithTimeInterval:-cha sinceDate:[NSDate date]];
-
+-(NSDate *)dateWithOffSet:(float)setX{
+    //与最后时间的差
+    int cha = (self.CellWidth * (kTimeLineNumberOfDays + 1) - setX - kWinW/2)/self.unitLength * self.unitTime;
+    NSDate *date = [NSDate dateWithTimeInterval:-cha sinceDate:[[NSDate date] getEndDate]];
+    
     return date;
 }
 
@@ -418,28 +418,23 @@ static const NSInteger kTimeLineNumberOfDays = 7;
 
 
 #pragma mark - 任意时间对应偏移量的位置
--(float)timeLineXoneTime:(NSDate *)date{
-    // 当前时间对应今天的偏移量，当前时间为计算坐标
-    NSDate *currDate = [NSDate date];
-    // 重新计算时间label时间
-    float x = [self timeLineXAboutpresentTime:currDate];
-    self.maxContentOffsetX = self.CellWidth * kTimeLineNumberOfDays + x - kWinW/2;
+-(double)getPositionOffsetForDate:(NSDate *)date{
     
-    NSTimeInterval end  = [[NSDate date] timeIntervalSince1970]*1;
-    
+    NSDate *maxDate = [[NSDate date] getEndDate];
+    NSTimeInterval end = [maxDate timeIntervalSince1970]*1;
     NSTimeInterval start = [date timeIntervalSince1970]*1;
-    
     NSTimeInterval cha = end - start;
-    float x1 = (cha/self.unitTime) * self.unitLength;
+    //self.CellWidth * (kTimeLineNumberOfDays + 1) 对应  今天的 23：59：59
+    double x =  self.CellWidth * (kTimeLineNumberOfDays + 1) - (cha / self.unitTime) * self.unitLength;
     
-    return (self.maxContentOffsetX - x1);
+    return x - kWinW/2;
 }
 
 #pragma mark - 时间轴走动
 -(void)setTimeLineWithDate:(nonnull NSDate * )date{
-    float x = [self timeLineXoneTime:date];
+    float x = [self getPositionOffsetForDate:date];
     self.timeLineCollction.contentOffset = CGPointMake(x, 0);
-    self.timeLabel.text = [self setLabelText:x];
+    self.timeLabel.text = [self setLabelTextWithOffset:x];
 
 }
 
@@ -454,7 +449,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
         rect.stop_time = stop;
         rect.start_time = start;
         
-        float offSetX = [self timeLineXoneTime:start];
+        float offSetX = [self getPositionOffsetForDate:start];
         NSInteger index = (offSetX + kWinW/2) / (int)self.CellWidth;
         
         [self.rectDateArray[index] addObject:rect];
@@ -462,14 +457,14 @@ static const NSInteger kTimeLineNumberOfDays = 7;
         SMRect *rect1 = [[SMRect alloc] init];
         rect1.stop_time = stop;
         rect1.start_time = [stop zeroOfDate];
-        float offSetX = [self timeLineXoneTime:stop];
+        float offSetX = [self getPositionOffsetForDate:stop];
         NSInteger index = (offSetX + kWinW/2) / (int)self.CellWidth;
         [self.rectDateArray[index] addObject:rect1];
         
         SMRect *rect2 = [[SMRect alloc] init];
         rect2.stop_time = [start getEndDate];
         rect2.start_time = start;
-        float offSetX2 = [self timeLineXoneTime:start];
+        float offSetX2 = [self getPositionOffsetForDate:start];
         NSInteger index2 = (offSetX2 + kWinW/2) / (int)self.CellWidth;
         [self.rectDateArray[index2] addObject:rect2];
     }

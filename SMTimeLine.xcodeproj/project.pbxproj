@@ -16,7 +16,6 @@
 		E3CF261A1FB1943F00266F14 /* NSDate+SMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF260D1FB18F0700266F14 /* NSDate+SMExtension.m */; };
 		E3CF261B1FB1944100266F14 /* SMAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF260F1FB18F0700266F14 /* SMAnimationView.m */; };
 		E3CF261C1FB1944300266F14 /* SMRect.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26111FB18F0700266F14 /* SMRect.m */; };
-		E3CF261D1FB1944600266F14 /* SMRectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26131FB18F0700266F14 /* SMRectTool.m */; };
 		E3CF261E1FB1944900266F14 /* SMTimeLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26151FB18F0700266F14 /* SMTimeLine.m */; };
 		E3CF261F1FB1944C00266F14 /* SMTimeLineConst.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26171FB18F0700266F14 /* SMTimeLineConst.m */; };
 		E3CF26201FB1945200266F14 /* SMTimeLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CF26191FB18F0700266F14 /* SMTimeLineView.m */; };
@@ -39,8 +38,6 @@
 		E3CF260F1FB18F0700266F14 /* SMAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMAnimationView.m; sourceTree = "<group>"; };
 		E3CF26101FB18F0700266F14 /* SMRect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRect.h; sourceTree = "<group>"; };
 		E3CF26111FB18F0700266F14 /* SMRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRect.m; sourceTree = "<group>"; };
-		E3CF26121FB18F0700266F14 /* SMRectTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRectTool.h; sourceTree = "<group>"; };
-		E3CF26131FB18F0700266F14 /* SMRectTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRectTool.m; sourceTree = "<group>"; };
 		E3CF26141FB18F0700266F14 /* SMTimeLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMTimeLine.h; sourceTree = "<group>"; };
 		E3CF26151FB18F0700266F14 /* SMTimeLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMTimeLine.m; sourceTree = "<group>"; };
 		E3CF26161FB18F0700266F14 /* SMTimeLineConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMTimeLineConst.h; sourceTree = "<group>"; };
@@ -106,8 +103,6 @@
 				E3CF260D1FB18F0700266F14 /* NSDate+SMExtension.m */,
 				E3CF260E1FB18F0700266F14 /* SMAnimationView.h */,
 				E3CF260F1FB18F0700266F14 /* SMAnimationView.m */,
-				E3CF26121FB18F0700266F14 /* SMRectTool.h */,
-				E3CF26131FB18F0700266F14 /* SMRectTool.m */,
 				E3CF26161FB18F0700266F14 /* SMTimeLineConst.h */,
 				E3CF26171FB18F0700266F14 /* SMTimeLineConst.m */,
 			);
@@ -186,7 +181,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3CF261B1FB1944100266F14 /* SMAnimationView.m in Sources */,
-				E3CF261D1FB1944600266F14 /* SMRectTool.m in Sources */,
 				E3CF25FA1FB18EDD00266F14 /* ViewController.m in Sources */,
 				E3CF26051FB18EDD00266F14 /* main.m in Sources */,
 				E3CF261C1FB1944300266F14 /* SMRect.m in Sources */,

@@ -20,10 +20,10 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = SMTimeLineFromRGB(0xececec);
+   // self.view.backgroundColor = SMTimeLineFromRGB(0xececec);
     self.timeLine = [[SMTimeLineView alloc] initWithFrame:CGRectMake(0, 300,kWinW,200)];
     _timeLine.delegate = self;
-    _timeLine.userInteractionEnabled = YES;
+   // _timeLine.userInteractionEnabled = YES;
     
     //    _timeLine.graduatedColor = [UIColor greenColor];
     //    _timeLine.indicateColor  = [UIColor blackColor];
@@ -47,7 +47,7 @@
     
     UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(200, 100, 100, 100)];
     btn1.backgroundColor = [UIColor redColor];
-    [btn1 addTarget:self action:@selector(add) forControlEvents:UIControlEventTouchUpInside];
+    [btn1 addTarget:self action:@selector(addRect) forControlEvents:UIControlEventTouchUpInside];
     [btn1 setTitle:@"添加区域" forState:UIControlStateNormal];
     [self.view addSubview:btn1];
     
@@ -68,7 +68,7 @@
     
 }
 
--(void)add{
+-(void)addRect{
     int x = arc4random() % 23;
     NSDate *start = [NSDate dateWithTimeIntervalSinceNow:-x * 3600 - 24 * 3600];
     
@@ -76,15 +76,13 @@
     
     [_timeLine joinDrawTimeLineRectWithStart:start stop:stop];
     [_timeLine updateTimeline];
-    
-    
 }
 
 #pragma mark --- MNTimeLineTimeDelegate
 
 -(void)timeLinePresentTime:(NSDate *)time{
     NSTimeInterval cha =  [time timeIntervalSinceDate:[NSDate date]];
-    NSLog(@"%@ 时间差%d",time,(int)cha);
+   NSLog(@"%@ 时间差%d",time,(int)cha);
 }
 
 

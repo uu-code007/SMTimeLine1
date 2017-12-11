@@ -118,7 +118,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
 -(void)initDateArray{
     _rectangleArray = [[NSMutableArray alloc] init];
     _rectDateArray = [NSMutableArray array];
-    for (int i = 0; i < kTimeLineNumberOfDays + 1; i ++) {
+    for (int i = 0; i < kTimeLineNumberOfDays + 2; i ++) {
         NSMutableArray *mutArray = [[NSMutableArray alloc] init];
         [_rectDateArray addObject:mutArray];
         
@@ -149,8 +149,8 @@ static const NSInteger kTimeLineNumberOfDays = 7;
     [self updatelabelText];
     NSDate *date=[NSDate date];
     [self.dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    float x = [self timeLineXAboutpresentTime:date];
-    self.timeLineCollction.contentOffset =CGPointMake(self.CellWidth * kTimeLineNumberOfDays + x - kWinW/2,0);
+    float x = [self getPositionOffsetForDate:date];
+    self.timeLineCollction.contentOffset =CGPointMake(x,0);
     self.timeLineCollction.delegate = self;
     self.timeLineCollction.dataSource = self;
     
@@ -185,8 +185,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
     self.timeLabel.backgroundColor = SMTimeLineColor(110, 205, 245);
     self.timeLabel.layer.masksToBounds = YES;
     self.timeLabel.layer.cornerRadius = 15;
-    float x = [self timeLineXAboutpresentTime:[NSDate date]];
-    self.maxContentOffsetX = self.CellWidth * kTimeLineNumberOfDays + x - kWinW/2;
+    self.maxContentOffsetX = [self getPositionOffsetForDate:[NSDate date]];
     self.timeLabel.text = [self setLabelTextWithOffset:self.timeLineCollction.contentOffset.x];
     [self.timeLabel setTextAlignment:NSTextAlignmentCenter];
     
@@ -221,7 +220,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
 
 // 定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:( UICollectionView *)collectionView numberOfItemsInSection:( NSInteger )section{
-    return kTimeLineNumberOfDays + 1;
+    return kTimeLineNumberOfDays + 2;
 }
 
 // 定义展示的Section的个数
@@ -280,13 +279,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
         
         // 重新计算时间label时间
         float x = [self timeLineXAboutpresentTime:date];
-        self.maxContentOffsetX = self.CellWidth * 7 + x - kWinW/2;
-        // 走到下一天还未更新列表示，下一天的报警区域，不该画上去BUG
-        //        NSDate *curDate = [self.dateFormat dateFromString:self.timeLabel.text];
-        //        float curOfset = [self timeLineXAboutpresentTime:curDate];
-        //        if ((curOfset < (kWinW/2 + 10) ) || (self.CellWidth - curOfset) < (kWinW/2 + 10)) {
-        //            self.isUpDate = NO;
-        //        }
+        self.maxContentOffsetX = [self getPositionOffsetForDate:date];
         
         if(scrollView.contentOffset.x < self.maxContentOffsetX || (scrollView.contentOffset.x > (x - kWinW/2))){
             //在时间轴表示时间范围内，时间label才会走
@@ -376,8 +369,7 @@ static const NSInteger kTimeLineNumberOfDays = 7;
     
     
     NSDate *date=[NSDate date];
-    float x = [self timeLineXAboutpresentTime:date];
-    self.maxContentOffsetX = self.CellWidth * kTimeLineNumberOfDays + x - kWinW/2;
+    self.maxContentOffsetX = [self getPositionOffsetForDate:date];
     self.timeLabel.text = [self setLabelTextWithOffset:self.timeLineCollction.contentOffset.x];
     
 }

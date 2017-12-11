@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "SMTimeLine"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "SMTimeLine."
 
   # This description is used to generate tags and improve search results.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.author             = { "sunmu" => "ios_sunmu@icloud.com" }
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/iossun/SMTimeLine1.git", :tag => "0.0.3" }
+  s.source       = { :git => "https://github.com/iossun/SMTimeLine1.git", :tag => "0.0.4" }
   s.source_files  = "SMTimeLine/Classes/*.{h,m}"
 
 

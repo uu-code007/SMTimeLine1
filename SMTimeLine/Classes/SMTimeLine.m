@@ -58,7 +58,7 @@
             float mDeltaX = (m_nEndX - m_nStartX  + 1) /7200;
             int m = self.videoX / mDeltaX;
             int y = kWinW / mDeltaX;
-            for (int x = m; x < y + m + 2; x ++){
+            for (int x = m; x < y + m + 2; x ++){//m为屏幕起点index，y + 2一共绘制条数
                 if ((1 + x*mDeltaX) > m_nEndX) {
                     [self drawRectSizeA:(x - m_nEndX/mDeltaX) mDeltaX:mDeltaX];
                 }else{

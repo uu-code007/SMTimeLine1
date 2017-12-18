@@ -5,6 +5,7 @@
 pod "SMTimeLine"
 ```
 
+![](https://github.com/iossun/bolgImage/raw/master/SMTimeLine/SMTimeLine.gif)
 ##### 手动导入
 
 将Classes文件夹中的所有源代码拽入项目中
